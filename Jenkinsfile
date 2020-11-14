@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("ac365d7/persuratan")
+        app = docker.build("ac365d7/mvp")
     }
 
     stage('Test Image') {
