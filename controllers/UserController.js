@@ -82,7 +82,7 @@ userRouter.post('/login', async (req, res) => {
 
 
 //isi data diri customer role customer
-userRouter.put('/datauser/:id', async (req,res) => {
+userRouter.put('/datauser', async (req,res) => {
 
     //header apabila akan melakukan akses
     var token = req.headers['x-access-token'];
@@ -96,7 +96,7 @@ userRouter.put('/datauser/:id', async (req,res) => {
             if(user.kategori_user == 2){
                 const {nama, NIK, No_req} = req.body;
     
-                const user = await User.findById(req.params.id);
+                const user = await User.findById(user._id);
             
                 if (user) {
                     user.nama_asli = nama;
